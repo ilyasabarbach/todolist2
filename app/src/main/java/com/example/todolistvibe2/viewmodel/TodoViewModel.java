@@ -12,7 +12,7 @@ import com.example.todolistvibe2.data.repository.TodoRepository;
 import java.util.List;
 
 public class TodoViewModel extends AndroidViewModel {
-    private TodoRepository repository;
+    private final TodoRepository repository;
     private String currentUserId;
 
     public TodoViewModel(@NonNull Application application) {
@@ -37,7 +37,7 @@ public class TodoViewModel extends AndroidViewModel {
         repository.delete(todo);
     }
 
-    public void toggleTodoCompleted(Todo todo) {
+    public void toggleTodoComplete(Todo todo) {
         todo.setCompleted(!todo.isCompleted());
         repository.update(todo);
     }
@@ -52,5 +52,13 @@ public class TodoViewModel extends AndroidViewModel {
 
     public LiveData<List<Todo>> getCompletedTodos() {
         return repository.getCompletedTodos(currentUserId);
+    }
+
+    public LiveData<Todo> getTodoById(long id) {
+        return repository.getTodoById(id);
+    }
+
+    public void deleteAllTodos() {
+        repository.deleteAllTodos(currentUserId);
     }
 } 

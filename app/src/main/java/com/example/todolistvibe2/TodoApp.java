@@ -6,6 +6,5 @@ public class TodoApp extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
-        // Initialisation des composants de l'application
     }
 } 

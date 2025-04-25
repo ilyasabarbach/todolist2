@@ -7,6 +7,7 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProvider;
 
+import com.example.todolistvibe2.MainActivity;
 import com.example.todolistvibe2.R;
 import com.example.todolistvibe2.viewmodel.AuthViewModel;
 import com.google.android.material.button.MaterialButton;
