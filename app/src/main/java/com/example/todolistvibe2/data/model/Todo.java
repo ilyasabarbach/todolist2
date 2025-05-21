@@ -12,13 +12,17 @@ public class Todo {
     private boolean completed;
     private long createdAt;
     private String userId;
+    private long dueDate;
+    private int priority;
 
-    public Todo(String title, String description, String userId) {
+    public Todo(String title, String description, String userId, long dueDate, int priority) {
         this.title = title;
         this.description = description;
         this.completed = false;
         this.createdAt = System.currentTimeMillis();
         this.userId = userId;
+        this.dueDate = dueDate;
+        this.priority = priority;
     }
 
     // Getters et Setters
@@ -34,4 +38,8 @@ public class Todo {
     public void setCreatedAt(long createdAt) { this.createdAt = createdAt; }
     public String getUserId() { return userId; }
     public void setUserId(String userId) { this.userId = userId; }
+    public long getDueDate() { return dueDate; }
+    public void setDueDate(long dueDate) { this.dueDate = dueDate; }
+    public int getPriority() { return priority; }
+    public void setPriority(int priority) { this.priority = priority; }
 } 

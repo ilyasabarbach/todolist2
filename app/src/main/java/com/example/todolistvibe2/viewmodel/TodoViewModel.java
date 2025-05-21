@@ -24,8 +24,8 @@ public class TodoViewModel extends AndroidViewModel {
         this.currentUserId = userId;
     }
 
-    public void insert(String title, String description) {
-        Todo todo = new Todo(title, description, currentUserId);
+    public void insert(String title, String description, long dueDate, int priority) {
+        Todo todo = new Todo(title, description, currentUserId, dueDate, priority);
         repository.insert(todo);
     }
 
@@ -52,5 +52,57 @@ public class TodoViewModel extends AndroidViewModel {
 
     public LiveData<List<Todo>> getCompletedTodos() {
         return repository.getCompletedTodos(currentUserId);
+    }
+
+    // --- Sorting Methods ---
+
+    // Due Date Sorting
+    public LiveData<List<Todo>> getAllTodosOrderByDueDateAsc() {
+        return repository.getAllTodosOrderByDueDateAsc(currentUserId);
+    }
+
+    public LiveData<List<Todo>> getAllTodosOrderByDueDateDesc() {
+        return repository.getAllTodosOrderByDueDateDesc(currentUserId);
+    }
+
+    public LiveData<List<Todo>> getActiveTodosOrderByDueDateAsc() {
+        return repository.getActiveTodosOrderByDueDateAsc(currentUserId);
+    }
+
+    public LiveData<List<Todo>> getActiveTodosOrderByDueDateDesc() {
+        return repository.getActiveTodosOrderByDueDateDesc(currentUserId);
+    }
+
+    public LiveData<List<Todo>> getCompletedTodosOrderByDueDateAsc() {
+        return repository.getCompletedTodosOrderByDueDateAsc(currentUserId);
+    }
+
+    public LiveData<List<Todo>> getCompletedTodosOrderByDueDateDesc() {
+        return repository.getCompletedTodosOrderByDueDateDesc(currentUserId);
+    }
+
+    // Priority Sorting
+    public LiveData<List<Todo>> getAllTodosOrderByPriorityAsc() {
+        return repository.getAllTodosOrderByPriorityAsc(currentUserId);
+    }
+
+    public LiveData<List<Todo>> getAllTodosOrderByPriorityDesc() {
+        return repository.getAllTodosOrderByPriorityDesc(currentUserId);
+    }
+
+    public LiveData<List<Todo>> getActiveTodosOrderByPriorityAsc() {
+        return repository.getActiveTodosOrderByPriorityAsc(currentUserId);
+    }
+
+    public LiveData<List<Todo>> getActiveTodosOrderByPriorityDesc() {
+        return repository.getActiveTodosOrderByPriorityDesc(currentUserId);
+    }
+
+    public LiveData<List<Todo>> getCompletedTodosOrderByPriorityAsc() {
+        return repository.getCompletedTodosOrderByPriorityAsc(currentUserId);
+    }
+
+    public LiveData<List<Todo>> getCompletedTodosOrderByPriorityDesc() {
+        return repository.getCompletedTodosOrderByPriorityDesc(currentUserId);
     }
 } 
