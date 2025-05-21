@@ -1,4 +1,4 @@
-# TodoList Vibe
+# TodoList
 
 Une application Android de gestion de tâches simple et efficace.
 
